@@ -63,9 +63,11 @@ modo_apresentacao = st.toggle("⭐ Ativar Modo Apresentação (Mostrar Exemplo 1
 if modo_apresentacao:
     st.success("✅ Protocolo de Análise Gerado (MODO DEMONSTRAÇÃO)!")
     st.subheader("🏢 EMPRESA DE TECNOLOGIA STARS S.A.")
+    st.caption("Nome Fantasia: STARS Bank") # <--- LINHA ADICIONADA AQUI
 elif st.session_state.dados_reais and st.session_state.dados_reais not in ["ERROR", "API_ERROR"]:
     st.success("✅ Protocolo de Análise Ativo (BUSCA REAL)!")
     st.subheader(f"🏢 {st.session_state.dados_reais.get('nome')}")
+    st.caption(f"Nome Fantasia: {st.session_state.dados_reais.get('fantasia', 'Não informado')}") # <--- LINHA ADICIONADA AQUI
 
 # =========================================================================
 # MODO DE APRESENTAÇÃO
